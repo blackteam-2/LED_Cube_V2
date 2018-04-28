@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8.CPP</ToolchainName>
+    <ProjectGuid>{b8c528d0-2968-44a7-b391-d5dc7703bca9}</ProjectGuid>
+    <avrdevice>atmega328p</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>LED_Cube_V2</AssemblyName>
+    <Name>LED_Cube_V2</Name>
+    <RootNamespace>LED_Cube_V2</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue>
+    </OverrideVtorValue>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <CacheFlash>true</CacheFlash>
+    <UncachedRange />
+    <BootSegment>0</BootSegment>
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.26.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <preserveEEPROM>true</preserveEEPROM>
+    <ResetRule>0</ResetRule>
+    <EraseKey />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega328p__</Value>
+      <Value>__AVR_ATmega328P__</Value>
+      <Value>ARDUINO=105</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../LED_Cube_V2</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries/dio2/src</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/libraries</Value>
+      <Value>C:/Users/James/Documents/Arduino/libraries</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino/avr-libc</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/variants/eightanaloginputs</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega328p__</Value>
+      <Value>__AVR_ATmega328P__</Value>
+      <Value>ARDUINO=105</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../LED_Cube_V2</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries/dio2/src</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/libraries</Value>
+      <Value>C:/Users/James/Documents/Arduino/libraries</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino/avr-libc</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/variants/eightanaloginputs</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+    <VMSETTING_IncludePaths>../../../LED_Cube_V2;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/libraries;C:/Users/James/Documents/Arduino/libraries;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino/avr-libc;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/variants/mega;e:/dropbox/dropbox/projects/arduino-1.0.5/hardware/tools/avr/avr/include/;e:/dropbox/dropbox/projects/arduino-1.0.5/hardware/tools/avr/avr/include/avr/;e:/dropbox/dropbox/projects/arduino-1.0.5/hardware/tools/avr/avr/;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/variants/eightanaloginputs;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries/FastDigitalIO;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries/dio2/src;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/variants/standard;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <arduino.board.name>nano328</arduino.board.name>
+        <arduino.board.desc>Arduino Nano w/ ATmega328</arduino.board.desc>
+        <arduino.board.property_bag>name=Arduino Nano w/ ATmega328
+upload.protocol=arduino
+upload.maximum_size=30720
+upload.speed=57600
+bootloader.low_fuses=0xFF
+bootloader.high_fuses=0xDA
+bootloader.extended_fuses=0x05
+bootloader.path=atmega
+bootloader.file=ATmegaBOOT_168_atmega328.hex
+bootloader.unlock_bits=0x3F
+bootloader.lock_bits=0x0F
+build.mcu=atmega328p
+build.f_cpu=16000000L
+build.core=arduino
+build.variant=eightanaloginputs
+runtime.ide.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5
+runtime.os=windows
+build.system.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware\arduino\system
+runtime.ide.version=105
+target_package=arduino
+target_platform=avr
+runtime.hardware.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware
+originalid=nano328
+vm.platform.root.path=E:\Programs\Atmel Studio 7\7.0\Extensions\pj1fskx3.5is\Micro Platforms\arduino10x
+avrisp.name=AVR ISP
+avrisp.communication=serial
+avrisp.protocol=stk500v1
+avrispmkii.name=AVRISP mkII
+avrispmkii.communication=usb
+avrispmkii.protocol=stk500v2
+usbtinyisp.name=USBtinyISP
+usbtinyisp.protocol=usbtiny
+usbasp.name=USBasp
+usbasp.communication=usb
+usbasp.protocol=usbasp
+parallel.name=Parallel Programmer
+parallel.protocol=dapa
+parallel.force=true
+arduinoisp.name=Arduino as ISP
+arduinoisp.communication=serial
+arduinoisp.protocol=stk500v1
+arduinoisp.speed=19200
+runtime.vm.boardinfo.id=nano328
+runtime.vm.boardinfo.name=nano328
+runtime.vm.boardinfo.desc=Arduino Nano w/ ATmega328
+runtime.vm.boardinfo.src_location=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware\arduino
+ide.hint=For use with Arduino 0023 and 1.0.x versions
+ide.location.key=Arduino
+ide.location.ide.winreg=Arduino 1.0.x Application
+ide.location.sketchbook.winreg=Arduino 1.0.x Sketchbook
+ide.location.sketchbook.preferences=sketchbook.path
+ide.location.sketchbook.default=%MYDOCUMENTS%\arduino
+ide.location.preferences=%VM_APPDATA_ROAMING%\arduino\preferences.txt
+ide.default.package=arduino
+ide.default.platform=avr
+ide.multiplatform=true
+ide.includes=Arduino.h
+ide.platformswithoutpackage=true
+ide.includes.fallback=wprogram.h
+ide.extension=ino
+ide.extension.fallback=pde
+ide.versionLTEQ=149
+ide.exe=arduino.exe
+ide.hosts=atmel
+ide.url=http://arduino.cc/en/Main/Software
+vm.debug=true
+software=ARDUINO
+ide.appid=arduino10x
+location.sketchbook=C:\Users\James\Documents\Arduino
+build.core.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware\arduino\cores\arduino
+vm.core.include=arduino.h
+build.board=AVR_NANO328
+vm.boardsource.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware\arduino
+runtime.platform.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware\arduino
+vm.platformname.name=avr
+build.arch=AVR
+</arduino.board.property_bag>
+        <arduino.build.mcu>atmega328p</arduino.build.mcu>
+        <arduino.build.f_cpu>16000000L</arduino.build.f_cpu>
+        <arduino.build.core>arduino</arduino.build.core>
+        <arduino.upload.protocol>arduino</arduino.upload.protocol>
+        <arduino.upload.speed>57600</arduino.upload.speed>
+        <arduino.upload.maximum_size>30720</arduino.upload.maximum_size>
+        <visualmicro.application.name>arduino10x</visualmicro.application.name>
+        <visualmicro.package.name>arduino</visualmicro.package.name>
+        <visualmicro.platform.name>avr</visualmicro.platform.name>
+        <arduino.upload.port>COM7</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega328p__</Value>
+      <Value>__AVR_ATmega328P__</Value>
+      <Value>ARDUINO=105</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcc.compiler.symbols.DefSymbols>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../LED_Cube_V2</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries/dio2/src</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/libraries</Value>
+      <Value>C:/Users/James/Documents/Arduino/libraries</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino/avr-libc</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/variants/eightanaloginputs</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize (-O1)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>__AVR_ATmega328p__</Value>
+      <Value>__AVR_ATmega328P__</Value>
+      <Value>ARDUINO=105</Value>
+      <Value>ARDUINO_MAIN</Value>
+      <Value>F_CPU=16000000L</Value>
+      <Value>__AVR__</Value>
+    </ListValues>
+  </avrgcccpp.compiler.symbols.DefSymbols>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../LED_Cube_V2</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries/dio2/src</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/libraries</Value>
+      <Value>C:/Users/James/Documents/Arduino/libraries</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino/avr-libc</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/variants/eightanaloginputs</Value>
+      <Value>E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize (-O1)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+    <VMSETTING_IncludePaths>../../../LED_Cube_V2;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/libraries;C:/Users/James/Documents/Arduino/libraries;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/cores/arduino/avr-libc;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/variants/mega;e:/dropbox/dropbox/projects/arduino-1.0.5/hardware/tools/avr/avr/include/;e:/dropbox/dropbox/projects/arduino-1.0.5/hardware/tools/avr/avr/include/avr/;e:/dropbox/dropbox/projects/arduino-1.0.5/hardware/tools/avr/avr/;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/variants/eightanaloginputs;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries/FastDigitalIO;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/libraries/dio2/src;E:/Dropbox/Dropbox/Projects/arduino-1.0.5/hardware/arduino/variants/standard;</VMSETTING_IncludePaths>
+    <VisualMicroSettings>
+      <VisualMicroSettings>
+        <arduino.board.name>nano328</arduino.board.name>
+        <arduino.board.desc>Arduino Nano w/ ATmega328</arduino.board.desc>
+        <arduino.board.property_bag>name=Arduino Nano w/ ATmega328
+upload.protocol=arduino
+upload.maximum_size=30720
+upload.speed=57600
+bootloader.low_fuses=0xFF
+bootloader.high_fuses=0xDA
+bootloader.extended_fuses=0x05
+bootloader.path=atmega
+bootloader.file=ATmegaBOOT_168_atmega328.hex
+bootloader.unlock_bits=0x3F
+bootloader.lock_bits=0x0F
+build.mcu=atmega328p
+build.f_cpu=16000000L
+build.core=arduino
+build.variant=eightanaloginputs
+runtime.ide.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5
+runtime.os=windows
+build.system.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware\arduino\system
+runtime.ide.version=105
+target_package=arduino
+target_platform=avr
+runtime.hardware.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware
+originalid=nano328
+vm.platform.root.path=E:\Programs\Atmel Studio 7\7.0\Extensions\pj1fskx3.5is\Micro Platforms\arduino10x
+avrisp.name=AVR ISP
+avrisp.communication=serial
+avrisp.protocol=stk500v1
+avrispmkii.name=AVRISP mkII
+avrispmkii.communication=usb
+avrispmkii.protocol=stk500v2
+usbtinyisp.name=USBtinyISP
+usbtinyisp.protocol=usbtiny
+usbasp.name=USBasp
+usbasp.communication=usb
+usbasp.protocol=usbasp
+parallel.name=Parallel Programmer
+parallel.protocol=dapa
+parallel.force=true
+arduinoisp.name=Arduino as ISP
+arduinoisp.communication=serial
+arduinoisp.protocol=stk500v1
+arduinoisp.speed=19200
+runtime.vm.boardinfo.id=nano328
+runtime.vm.boardinfo.name=nano328
+runtime.vm.boardinfo.desc=Arduino Nano w/ ATmega328
+runtime.vm.boardinfo.src_location=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware\arduino
+ide.hint=For use with Arduino 0023 and 1.0.x versions
+ide.location.key=Arduino
+ide.location.ide.winreg=Arduino 1.0.x Application
+ide.location.sketchbook.winreg=Arduino 1.0.x Sketchbook
+ide.location.sketchbook.preferences=sketchbook.path
+ide.location.sketchbook.default=%MYDOCUMENTS%\arduino
+ide.location.preferences=%VM_APPDATA_ROAMING%\arduino\preferences.txt
+ide.default.package=arduino
+ide.default.platform=avr
+ide.multiplatform=true
+ide.includes=Arduino.h
+ide.platformswithoutpackage=true
+ide.includes.fallback=wprogram.h
+ide.extension=ino
+ide.extension.fallback=pde
+ide.versionLTEQ=149
+ide.exe=arduino.exe
+ide.hosts=atmel
+ide.url=http://arduino.cc/en/Main/Software
+vm.debug=true
+software=ARDUINO
+ide.appid=arduino10x
+location.sketchbook=C:\Users\James\Documents\Arduino
+build.core.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware\arduino\cores\arduino
+vm.core.include=arduino.h
+build.board=AVR_NANO328
+vm.boardsource.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware\arduino
+runtime.platform.path=E:\Dropbox\Dropbox\Projects\arduino-1.0.5\hardware\arduino
+vm.platformname.name=avr
+build.arch=AVR
+</arduino.board.property_bag>
+        <arduino.build.mcu>atmega328p</arduino.build.mcu>
+        <arduino.build.f_cpu>16000000L</arduino.build.f_cpu>
+        <arduino.build.core>arduino</arduino.build.core>
+        <arduino.upload.protocol>arduino</arduino.upload.protocol>
+        <arduino.upload.speed>57600</arduino.upload.speed>
+        <arduino.upload.maximum_size>30720</arduino.upload.maximum_size>
+        <visualmicro.application.name>arduino10x</visualmicro.application.name>
+        <visualmicro.package.name>arduino</visualmicro.package.name>
+        <visualmicro.platform.name>avr</visualmicro.platform.name>
+        <arduino.upload.port>COM7</arduino.upload.port>
+      </VisualMicroSettings>
+    </VisualMicroSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="LED_Cube_V2.ino">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="__vm\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="__vm\.LED_Cube_V2.vsarduino.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
