@@ -10,6 +10,7 @@
 
 #define __AVR_ATmega328p__
 #define __AVR_ATmega328P__
+#define _VMDEBUG 1
 #define ARDUINO 105
 #define ARDUINO_MAIN
 #define F_CPU 16000000L
@@ -40,6 +41,7 @@ void AddPathToCube();
 void AddTextToCubeLayer(char inputChar, int axis);
 void Effect_Rain(uint16_t iterations, uint16_t iterationDelay);
 void Effect_TextScroll(uint16_t iterations, String inputString, uint16_t scrollDelay);
+void Effect_ShootText(uint16_t iterations, String inputString, uint8_t axis, uint16_t delayTime, uint16_t shiftDelayTime);
 
 #include "pins2_arduino.h" 
 #include "pins_arduino.h" 

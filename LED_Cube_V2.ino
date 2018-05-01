@@ -6,9 +6,10 @@
 James McKenna
 
 
-===== Software Version: V0.1 =====
+===== Software Version: V0.2 =====
 
 V0.1 - 23/04/2018 - Initial Program
+V0.2 - 01/05/2018 - Added shot_text effect
 
 
 ===== Compatible PCB Revision: Rev A =====
@@ -94,7 +95,7 @@ V0.1 - 23/04/2018 - Initial Program
 //====================================================== Defines / ASCII Array ===============================================
 //============================================================================================================================
 
-#define SOFTWAREVER 0.1
+#define SOFTWAREVER 0.2
 //---Reference Constant Definitions---
 #define CUBESIZE 8
 #define TEXTPATHLENGTH 34
@@ -390,14 +391,14 @@ uint8_t CubeRowToUInt(uint8_t layer, uint8_t row)
 #pragma region Background Functions for effects
 bool InRange(uint8_t Z, uint8_t X, uint8_t Y)
 {
-		if ((Z >= 0) && (Z < CUBESIZE) && (X >= 0) && (X < CUBESIZE) && (Y >= 0) && (Y < CUBESIZE))
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+	if ((Z >= 0) && (Z < CUBESIZE) && (X >= 0) && (X < CUBESIZE) && (Y >= 0) && (Y < CUBESIZE))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 void  SetPixel(uint8_t Z, uint8_t X, uint8_t Y, bool level)
@@ -495,10 +496,10 @@ void SetAll()
 //
 void ClearAll()
 {
-		for(int i = 0; i < CUBESIZE ; i++)
-		{
-			SetCubeLayer(ZAXIS, i, PIXELOFF);
-		}
+	for(int i = 0; i < CUBESIZE ; i++)
+	{
+		SetCubeLayer(ZAXIS, i, PIXELOFF);
+	}
 }
 
 // shift all the data by 1 position along the selected axis
@@ -515,7 +516,7 @@ void ShiftLayerData(uint8_t axis, bool dir)
 	
 	for (int i = 0; i < CUBESIZE; i++)
 	{
-		if (dir)
+		if (DIRDOWN)
 		{
 			layer1 = i;
 		} 
@@ -526,7 +527,7 @@ void ShiftLayerData(uint8_t axis, bool dir)
 		
 		for (int j = 0; j < CUBESIZE; j++)
 		{
-			if (dir)
+			if (DIRDOWN)
 			{
 				layer2 = layer1 - 1;
 			} 
@@ -700,7 +701,7 @@ void AddTextToCubeLayer(char inputChar, int axis)
 		case ZAXIS:
 			for (loopCount = 0 ; loopCount < 5 ; loopCount++)
 			{
-				SetLine(2, 0, loopCount + 1, chrPattern[loopCount]);
+				SetLine(YAXIS, 0, loopCount + 1, chrPattern[loopCount]);
 			}
 			break;
 		
@@ -768,7 +769,7 @@ void Effect_Rain(uint16_t iterations, uint16_t iterationDelay)
 	}
 }
 
-//
+// Scrolls the inputString around the edge of the LED cube
 void Effect_TextScroll(uint16_t iterations, String inputString, uint16_t scrollDelay)
 {
 	// Clear the cube data
@@ -793,7 +794,7 @@ void Effect_TextScroll(uint16_t iterations, String inputString, uint16_t scrollD
 				AddPathToCube();
 				delay(scrollDelay);
 				IncrementPath();
-				AddPathToCube();//?
+				//AddPathToCube(); //---?---
 			}
 			
 			// Add a space between Chars
@@ -808,5 +809,40 @@ void Effect_TextScroll(uint16_t iterations, String inputString, uint16_t scrollD
 			IncrementPath();
 			AddPathToCube();
 		}
+	}
+}
+
+void Effect_ShootText(uint16_t iterations, String inputString, uint8_t axis, uint16_t delayTime, uint16_t shiftDelayTime)
+{
+	// Clear the old cube data
+	ClearAll();
+	
+	String inpStr = inputString;
+	uint16_t strLength = inpStr.length();
+	
+	for(int i = 0; i < iterations; i++)
+	{
+		// get the current char to be displayed
+		char currentChar = inpStr[i]; 
+		
+		// Clear the top letter still in the cube
+		SetCubeLayer(axis, 7, PIXELOFF);
+		
+		// Add text to the cube
+		AddTextToCubeLayer(currentChar, axis);
+		
+		// Delay for position 0
+		delay(shiftDelayTime);
+		
+		// Move the text through the cube
+		for (int j = 0; j < CUBESIZE; j++)
+		{
+			ShiftLayerData(axis, DIRUP);
+			SetCubeLayer(axis, j - 1, PIXELOFF);
+			delay(shiftDelayTime);
+		}
+		
+		// Delay between chars
+		delay(delayTime);
 	}
 }
